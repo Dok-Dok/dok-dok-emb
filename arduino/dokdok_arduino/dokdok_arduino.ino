@@ -22,10 +22,6 @@ void loop() {
   // 초음파 센서의 가리값이 위 계산값과 동일하게 Cm로 환산되는 계산공식. 수식이 간단해지도록 적용.
   distance = duration * 17 / 1000;
 
-  Serial.println(duration); // 초음파가 반사되어 돌아오는 시간.
-  Serial.print("\nDistance : ");
-  Serial.print(distance); // 측정된 물체로부터 거리값(cm값)을 보여준다.
-  Serial.println("Cm");
-
+  Serial.println(distance); // 측정된 물체로부터 거리값(cm값)을 보여준다.
   delay(1000); // 1초마다 측정값을 보여준다.
 }
