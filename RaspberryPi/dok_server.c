@@ -42,10 +42,21 @@ void loop() {
 			str[count++] = newChar;
 		} else {
 			count = 0;
-			if(atoi(str) > 15) {
-				printf("%d open\n", atoi(str));
+			int num = atoi(str);
+			if(num > 15) {
+				// 문이 열렸을 경우
+				printf("%d open\n", num);
+				if(isOpen == 0) {
+					isOpen = 1;
+					// 문에 변화가 생긴 것. TODO. 안드로이드에 open 사실 알리기
+				}
 			} else {
-				printf("%d close\n", atoi(str));
+				// 문이 닫혔을 경우
+				printf("%d close\n", num);
+				if(isOpen == 1) {
+					isOpen = 0;
+					// 문에 변화가 생긴 것. TODO. 안드로이드에 close 사실 알리기
+				}
 			}
 			for(int i = 0; i < 10; i++) {
 				str[i] = '\0';
